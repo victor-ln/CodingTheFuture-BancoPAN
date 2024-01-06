@@ -32,3 +32,14 @@ The `<footer>` element represents the footer of a section or a page. It usually 
 These elements (`<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>`) represent headings of different levels. `<h1>` is the highest level, typically used for main headings, while `<h6>` is the lowest level. Headings provide structure and hierarchy to the document.
 
 By incorporating these semantic elements into your HTML5 document, you enhance its structure and make it more accessible and meaningful for both developers and automated systems.
+
+### `<p>`
+
+The `<p>` element is used to define paragraphs in HTML. It represents a block of text, images, video, etc.
+
+### `<a>`, `href`, and `target` Attributes
+
+The `<a>` (anchor) element, used for links, has two important attributes:
+
+- `href`: Specifies the URL the link points to (absolute or relative).
+- `target`: Controls how the linked resource is displayed.
