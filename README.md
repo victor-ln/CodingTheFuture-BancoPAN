@@ -43,3 +43,15 @@ The `<a>` (anchor) element, used for links, has two important attributes:
 
 - `href`: Specifies the URL the link points to (absolute or relative).
 - `target`: Controls how the linked resource is displayed.
+
+### `<img>` Element
+
+The `<img>` element in HTML is used to embed images in a web page. Below are details about the `src` and `alt` attributes:
+
+1. **`src` (Source):**
+   - Specifies the path to the image file (relative or absolute).
+   - Example usage: `<img src="path/to/image.jpg" alt="Image description">`
+
+2. **`alt` (Alternative Text):**
+   - Provides alternative text for the image, useful for accessibility.
+   - Example usage: `<img src="path/to/image.jpg" alt="A beautiful sunset over the city">`
