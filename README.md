@@ -55,3 +55,19 @@ The `<img>` element in HTML is used to embed images in a web page. Below are det
 2. **`alt` (Alternative Text):**
    - Provides alternative text for the image, useful for accessibility.
    - Example usage: `<img src="path/to/image.jpg" alt="A beautiful sunset over the city">`
+
+### Lists
+
+HTML provides tags to create both unordered lists (`<ul>`) and ordered lists (`<ol>`). The list items themselves are represented by the `<li>` (list item) tag.
+
+#### Unordered List (`<ul>`)
+
+An unordered list is used to represent a list of items where the order doesn't matter. Each item is marked with the `<li>` tag.
+
+#### Ordered List (`<ol>`)
+
+An ordered list is used when the order of items is important. The items are automatically numbered.
+
+#### List Item (`<li>`)
+
+The `<li>` tag is used to define each item in a list, whether it's in an unordered or ordered list.
