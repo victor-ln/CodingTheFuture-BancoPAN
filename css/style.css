@@ -1,19 +1,53 @@
 body {
-    background: #ccc;
+    background: #f7f7f7;
+}
+
+.photo {
+    border: 1px solid #505050;
+    border-radius: 50%;
 }
 
 #title, .subtitle, .post_title {
-    color: blue;
+    color: #505050;
 }
 
 .post_title {
     font-size: 16px;
     font-style: italic;
+    margin: 0;
+    /* It is a good practice to keep all margins in the same direction */
+    margin-bottom: 15px;
 }
 
 .post {
     background: white;
-    padding: 10px;
-    border: 1px solid black;
-    margin: 10px;
+    /* padding: up-down left-right */
+    padding: 15px 10px;
+    /*
+    - Other possible configuration are:
+    padding: 15px;
+    padding: 15px 10px 5px 0; sequence is: up right down left
+    */
+    border: 2px solid #505050;
+    /*
+    - It is also possible to set attribute individually
+    border-width: 10px;
+    border-color: black;
+    border-style: solid;
+
+    - And the directions
+    border-top-width: 10px;
+    */
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.post_content {
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.post_image {
+    margin: 0;
+    margin-bottom: 15px;
 }
