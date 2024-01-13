@@ -1,48 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Victor Nunes</title>
-        <link rel="stylesheet" href="./css/style.css">
-    </head>
-    <body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Victor Nunes</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <img
+        src="./assets/me.jpg"
+        alt="Photograph of Victor Nunes"
+        width="80px"
+        class="photo"
+      />
+      <!-- The only <h1></h1> element in the page, serving as the title of the content -->
+      <h1 id="title">Victor Nunes</h1>
+    </header>
+    <!-- Section to represent the list of posts -->
+    <section>
+      <!-- Header for section, displaying its title -->
+      <header>
+        <h2 class="subtitle">Posts</h2>
+      </header>
+      <article class="post">
+        <!-- Header for the name of the post -->
         <header>
-            <img src="./assets/me.jpg" alt="Photograph of Victor Nunes" width="80px" class="photo">
-            <!-- The only <h1></h1> element in the page, serving as the title of the content -->
-            <h1 id="title">Victor Nunes</h1>
+          <h3 class="post_title">Post #1</h3>
+          <img
+            src="./assets/code.jpg"
+            alt="Notebook with C++ Code on Visual Studio Code"
+            width="400px"
+            class="post_image"
+          />
         </header>
-        <!-- Section to represent the list of posts -->
-        <section>
-            <!-- Header for section, displaying its title -->
-            <header>
-                <h2 class="subtitle">Posts</h2>
-            </header>
-            <article class="post">
-                <!-- Header for the name of the post -->
-                <header>
-                    <h3 class="post_title">Post #1</h3>
-                    <img src="./assets/code.jpg" alt="Notebook with C++ Code on Visual Studio Code" width="400px" class="post_image">
-                </header>
-                <!-- <p></p> element encapsulating text -->
-                <p class="post_content">
-                    <!-- <a></a> element for adding links, target="_blank" to open in a new tab -->
-                    Lorem ipsum dolor sit amet, <a href="https://www.linkedin.com/in/victor-nunes-dev/" target="_blank">consectetur adipiscing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim <a href="mailto:victornunes2013@hotmail.com">ad minim veniam</a>, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </article>
-        </section>
-        <!-- Footer to represent the list of contacts in the future -->
-        <footer>
-            <ul class="contacts_list">
-                <li>
-                    <a href="mailto:victornunes2013@hotmail.com">victornunes2013@hotmail.com</a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/victor-nunes-dev/" target="_blank">Linkedin</a>
-                </li>
-                <li>
-                    <a href="https://github.com/victor-ln" target="_blank">GitHub</a>
-                </li>
-            </ul>
-        </footer>
-    </body>
+        <!-- <p></p> element encapsulating text -->
+        <p class="post_content">
+          <!-- <a></a> element for adding links, target="_blank" to open in a new tab -->
+          Lorem ipsum dolor sit amet,
+          <a
+            href="https://www.linkedin.com/in/victor-nunes-dev/"
+            target="_blank"
+            >consectetur adipiscing</a
+          >
+          elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+          aliqua. Ut enim
+          <a href="mailto:victornunes2013@hotmail.com">ad minim veniam</a>, quis
+          nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+          esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+          id est laborum.
+        </p>
+      </article>
+    </section>
+    <!-- Footer to represent the list of contacts in the future -->
+    <footer>
+      <ul class="contacts_list">
+        <li>
+          <a href="mailto:victornunes2013@hotmail.com"
+            >victornunes2013@hotmail.com</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/victor-nunes-dev/"
+            target="_blank"
+            >Linkedin</a
+          >
+        </li>
+        <li>
+          <a href="https://github.com/victor-ln" target="_blank">GitHub</a>
+        </li>
+      </ul>
+    </footer>
+  </body>
 </html>
