@@ -26,3 +26,22 @@ body {
     border-radius: 1rem;
   }
 }
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+}
+
+.pagination button {
+  background-color: #6C79DB;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.25rem 0.5rem;
+  margin: .25rem 0;
+  font-size: .9rem;
+}

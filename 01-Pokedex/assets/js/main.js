@@ -1,3 +1,9 @@
+const pokemonList = document.getElementById("pokemonList");
+const loadMoreButton = document.getElementById("loadMoreButton");
+
+const limit = 12;
+let offset = 0;
+
 function convertPokemonTypesToListItem(pokemonTypes) {
   return pokemonTypes.map((type) => `<li class="type ${type}">${type}</li>`);
 }
@@ -21,12 +27,19 @@ function convertPokemonToListItem(pokemon) {
     `;
 }
 
-const pokemonList = document.getElementById("pokemonList");
+function loadPokemonsIntoHTML(offset, limit) {
+    pokeAPI
+    .getPokemons(offset, limit)
+    .then((pokemons) => {
+      const pokemonListsHTML = pokemons.map(convertPokemonToListItem).join("");
+      pokemonList.innerHTML += pokemonListsHTML;
+    })
+    .catch(console.error);  
+}
 
-pokeAPI
-  .getPokemons()
-  .then((pokemons) => {
-    const pokemonListsHTML = pokemons.map(convertPokemonToListItem).join("");
-    pokemonList.innerHTML += pokemonListsHTML;
-  })
-  .catch(console.error);
+loadMoreButton.addEventListener('click', () => {
+    offset += limit;
+    loadPokemonsIntoHTML(offset, limit);
+})
+
+loadPokemonsIntoHTML(offset, limit);
