@@ -1,9 +1,23 @@
 const pokeAPI = {};
 
+function findFirstNonNullValueByKeyName(obj, keyName) {
+  for (const key in obj) {
+    if (key == keyName && Boolean(obj[key])) {
+      return obj[key];
+    } else if (typeof obj[key] === "object") {
+      const result = findFirstNonNullValueByKeyName(obj[key], keyName);
+      if (Boolean(result)) {
+        return result;
+      }
+    }
+  }
+  return null;
+}
+
 function createPokemonFromPokeAPIDetail(pokeDetail) {
   const pokemon = new Pokemon();
 
-  pokemon.id = pokeDetail.order;
+  pokemon.id = pokeDetail.id;
   pokemon.name = pokeDetail.name;
 
   const types = pokeDetail.types.map((typeSlot) => typeSlot.type.name);
@@ -12,7 +26,9 @@ function createPokemonFromPokeAPIDetail(pokeDetail) {
   pokemon.types = types;
   pokemon.mainType = mainType;
 
-  pokemon.photo = pokeDetail.sprites.other.dream_world.front_default;
+  pokemon.photo =
+    pokeDetail.sprites.other.dream_world.front_default ||
+    findFirstNonNullValueByKeyName(pokeDetail.sprites, "front_default");
 
   return pokemon;
 }
