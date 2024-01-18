@@ -33,12 +33,10 @@
       <div class="pokemon-page grass">
         <div class="pokemon-page__header">
           <div class="pokemon-page__info">
-            <span class="pokemon-page__name">Bulbasaur</span>
-            <span class="pokemon-page__number">1</span>
+            <span class="pokemon-page__name"></span>
+            <span class="pokemon-page__number"></span>
           </div>
           <ol class="types">
-            <li class="type grass">grass</li>
-            <li class="type grass">poison</li>
           </ol>
           <img
             src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
@@ -50,20 +48,16 @@
             <h2>Overview</h2>
             <dl>
               <div>
-                <dt>Species</dt>
-                <dd>Seed</dd>
-              </div>
-              <div>
                 <dt>Height</dt>
-                <dd>0.70cm</dd>
+                <dd id="height"></dd>
               </div>
               <div>
                 <dt>Weight</dt>
-                <dd>6.9kg</dd>
+                <dd id="weight"></dd>
               </div>
               <div>
                 <dt>Abilities</dt>
-                <dd>Overgrow, ...</dd>
+                <dd id="abilities"></dd>
               </div>
             </dl>
           </section>
@@ -73,43 +67,43 @@
             <dl>
               <div>
                 <dt>HP</dt>
-                <dd>
-                  <span>45</span>
+                <dd id="hp">
+                  <span></span>
                   <span class="bar"></span>
                 </dd>
               </div>
               <div>
                 <dt>Attack</dt>
-                <dd>
-                  <span>65</span>
+                <dd id="attack">
+                  <span></span>
                   <span class="bar"></span>
                 </dd>
               </div>
               <div>
                 <dt>Defense</dt>
-                <dd>
-                  <span>65</span>
+                <dd id="defense">
+                  <span></span>
                   <span class="bar"></span>
                 </dd>
               </div>
               <div>
                 <dt>Special-Attack</dt>
-                <dd>
-                  <span>49</span>
+                <dd id="special-attack">
+                  <span></span>
                   <span class="bar"></span>
                 </dd>
               </div>
               <div>
                 <dt>Special-Defense</dt>
-                <dd>
-                  <span>49</span>
+                <dd id="special-defense">
+                  <span></span>
                   <span class="bar"></span>
                 </dd>
               </div>
               <div>
                 <dt>Speed</dt>
-                <dd>
-                  <span>45</span>
+                <dd id="speed">
+                  <span></span>
                   <span class="bar"></span>
                 </dd>
               </div>
@@ -118,5 +112,6 @@
         </div>
       </div>
     </section>
+    <script src="./assets/js/details.js"></script>
   </body>
 </html>
