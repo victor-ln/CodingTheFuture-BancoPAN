@@ -11,35 +11,42 @@ function convertPokemonTypesToListItem(pokemonTypes) {
 function convertPokemonToListItem(pokemon) {
   return `
         <li class="pokemon ${pokemon.mainType}">
-            <span class="number">#${pokemon.id}</span>
+          <span class="number">#${pokemon.id}</span>
+          <a href="details.html" onclick="showPokemonDetails(${pokemon.id}); return false; ">
             <span class="name">${pokemon.name}</span>
-
-            <div class="detail">
-            <ol class="types">
-                ${convertPokemonTypesToListItem(pokemon.types).join("")}
-            </ol>
-            <img
-                src="${pokemon.photo}"
-                alt="${pokemon.name}"
-            />
-            </div>
+          </a>
+          <div class="detail">
+          <ol class="types">
+              ${convertPokemonTypesToListItem(pokemon.types).join("")}
+          </ol>
+          <img
+              src="${pokemon.photo}"
+              alt="${pokemon.name}"
+          />
+          </div>
         </li>
-    `;
+  `;
 }
 
 function loadPokemonsIntoHTML(offset, limit) {
-    pokeAPI
+  pokeAPI
     .getPokemons(offset, limit)
     .then((pokemons) => {
       const pokemonListsHTML = pokemons.map(convertPokemonToListItem).join("");
       pokemonList.innerHTML += pokemonListsHTML;
     })
-    .catch(console.error);  
+    .catch(console.error);
 }
 
-loadMoreButton.addEventListener('click', () => {
-    offset += limit;
-    loadPokemonsIntoHTML(offset, limit);
-})
+loadMoreButton.addEventListener("click", () => {
+  offset += limit;
+  loadPokemonsIntoHTML(offset, limit);
+});
 
 loadPokemonsIntoHTML(offset, limit);
+
+function showPokemonDetails(pokemonId) {
+  const detailsPageUrl = `./details.html?id=${pokemonId}`;
+
+  window.location.href = detailsPageUrl;
+}

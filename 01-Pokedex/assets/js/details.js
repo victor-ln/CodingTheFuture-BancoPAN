@@ -1,29 +1,42 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const nameElement = document.querySelector(".pokemon-page__name");
-  const numberElement = document.querySelector(".pokemon-page__number");
-  const typesList = document.querySelector(".types");
-  const imageElement = document.querySelector(".pokemon-page__header img");
+document.addEventListener("DOMContentLoaded", async function () {
+  const pokemonPage = document.querySelector(".pokemon-page");
+  const nameElement = pokemonPage.querySelector(".pokemon-page__name");
+  const numberElement = pokemonPage.querySelector(".pokemon-page__number");
+  const typesList = pokemonPage.querySelector(".types");
+  const imageElement = pokemonPage.querySelector(".pokemon-page__header img");
 
-  function updatePokemonDetails(height, weight, abilities, stats) {
-    nameElement.textContent = "Bulbasaur";
-    numberElement.textContent = "1";
+  function updatePokemonDetails(pokemonDetails) {
+    pokemonPage.classList.add(pokemonDetails.mainType);
 
-    addTypeToList("grass");
-    addTypeToList("poison");
+    nameElement.textContent = pokemonDetails.name;
+    numberElement.textContent = pokemonDetails.id;
 
-    imageElement.src =
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg";
+    for (type of pokemonDetails.types) {
+      addTypeToList(type);
+    }
+    imageElement.src = pokemonDetails.photo;
 
-    updateOverviewValue("height", height);
-    updateOverviewValue("weight", weight);
-    updateOverviewValue("abilities", abilities);
+    updateOverviewValue(
+      "height",
+      `${pokemonDetails.height} cm ` +
+        `(${(pokemonDetails.height * 0.393701).toFixed(2)} in)`
+    );
+    updateOverviewValue(
+      "weight",
+      `${pokemonDetails.weight} kg ` +
+        `(${(pokemonDetails.weight * 2.20462).toFixed(2)} lbs)`
+    );
+    updateOverviewValue("abilities", `${pokemonDetails.abilities.join(", ")}`);
 
-    updateBaseStatsValue("hp", stats.hp);
-    updateBaseStatsValue("attack", stats.attack);
-    updateBaseStatsValue("defense", stats.defense);
-    updateBaseStatsValue("special-attack", stats.specialAttack);
-    updateBaseStatsValue("special-defense", stats.specialDefense);
-    updateBaseStatsValue("speed", stats.speed);
+    updateBaseStatsValue("hp", pokemonDetails.stats.hp);
+    updateBaseStatsValue("attack", pokemonDetails.stats.attack);
+    updateBaseStatsValue("defense", pokemonDetails.stats.defense);
+    updateBaseStatsValue("special-attack", pokemonDetails.stats.specialAttack);
+    updateBaseStatsValue(
+      "special-defense",
+      pokemonDetails.stats.specialDefense
+    );
+    updateBaseStatsValue("speed", pokemonDetails.stats.speed);
   }
 
   function addTypeToList(type) {
@@ -48,27 +61,10 @@ document.addEventListener("DOMContentLoaded", function () {
       element.textContent = definition;
     }
   }
+  const urlParams = new URLSearchParams(window.location.search);
+  const pokemonID = urlParams.get("id");
 
-  const pokemonDetails = {
-    height: "0.70cm",
-    weight: "6.9kg",
-    abilities: "Overgrow, ...",
-    stats: {
-      hp: "45",
-      attack: "65",
-      defense: "65",
-      specialAttack: "49",
-      specialDefense: "49",
-      speed: "45",
-    },
-  };
-
-  updatePokemonDetails(
-    pokemonDetails.height,
-    pokemonDetails.weight,
-    pokemonDetails.abilities,
-    pokemonDetails.stats
-  );
+  updatePokemonDetails(await pokeAPI.getPokemonDetail(pokemonID));
 });
 
 function contains(selector, text) {
